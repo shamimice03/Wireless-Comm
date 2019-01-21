@@ -16,7 +16,7 @@ int main()
     cout<<"Input path loss exponent, n = "; cin>>n;
     cout<<"Input distance from base station(m): "; cin>>d;
 
-    Pr = Pt - 10.0*n*log10(d0/d);
+    Pr = Pt - 10.0*n*log10(d/d0);
 
     printf("Power received at %f is: %f\n", d, Pr);
 
