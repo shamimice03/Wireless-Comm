@@ -11,11 +11,11 @@ DB getFraunhoferDistance(DB D,DB lemda)
 {
     return 2*pow(D,2)/(lemda);
 }
-DB getReceivedPower(DB Pt,DB Gt,DB Gr,DB lemda,DB D,DB L)
+DB getReceivedPower(DB Pt,DB Gt,DB Gr,DB lemda,DB df,DB L)
 {
     DB hi = Pt*Gt*Gr*pow(lemda,2);
-    DB lo = pow(4,2)*pow(PI,2)*pow(D,2)*L;
-    return 10*log10((hi/lo)*1000);
+    DB lo = pow(4,2)*pow(PI,2)*pow(df,2)*L;
+    return (hi/lo);
 }
 int main()
 {
@@ -33,6 +33,6 @@ int main()
     DB lemda = getLemda(f);
     DB df = getFraunhoferDistance(D,lemda);
     cout<<"\nReceived power at distance "<<df<<" is : ";
-    cout<<getReceivedPower(Pt,Gt,Gr,lemda,D,1)<<endl;
+    cout<<getReceivedPower(Pt,Gt,Gr,lemda,df,1)<<endl;
     return 0;
 }
