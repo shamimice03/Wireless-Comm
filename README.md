@@ -1,1 +1,2 @@
-# Wireless-Comm
+# Wireless Communication 
+# Problems Implementation in C++
